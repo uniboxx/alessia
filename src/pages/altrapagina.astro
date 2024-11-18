@@ -1,10 +1,15 @@
 ---
 import Layout from '../layouts/Layout.astro';
+const colorNumbers = Array.from({ length: 200 }, () =>
+  Math.floor(Math.random() * 360)
+);
+const colorNumber = Math.floor(Math.random() * 360);
+console.log(colorNumbers);
 ---
 
 <Layout title="altrapagina">
   <div class="container">
-    <h1>Wordpress non mi piace per niente</h1>
+    <h1 id="myH1">Wordpress non mi piace per niente</h1>
   </div>
 </Layout>
 
@@ -16,17 +21,30 @@ import Layout from '../layouts/Layout.astro';
     min-height: 100svh;
 
     h1 {
-      color: white;
-      font-size: 1rem;
+      font-size: 1px;
       animation: wordpress 3s infinite alternate;
     }
   }
   @keyframes wordpress {
     0% {
-      font-size: 1rem;
+      font-size: 1px;
     }
     100% {
       font-size: 5rem;
     }
   }
 </style>
+
+<script>
+  import { isLeftHandSideExpression } from 'typescript';
+
+  const h1El = document.getElementById('myH1');
+  let color: number = Math.floor(Math.random() * 360);
+
+  setInterval(() => {
+    color += 1;
+    if (color === 360) color = 0;
+    h1El.style.color = `hsl(${color},${Math.floor(Math.random() * 100)}%,${Math.floor(Math.random() * 100)}%)`;
+    console.log(color);
+  }, 1000);
+</script>
