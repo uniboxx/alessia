@@ -3,5 +3,30 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="altrapagina">
-  <h1>altra pagina</h1>
+  <div class="container">
+    <h1>Wordpress non mi piace per niente</h1>
+  </div>
 </Layout>
+
+<style>
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100svh;
+
+    h1 {
+      color: white;
+      font-size: 1rem;
+      animation: wordpress 3s infinite alternate;
+    }
+  }
+  @keyframes wordpress {
+    0% {
+      font-size: 1rem;
+    }
+    100% {
+      font-size: 5rem;
+    }
+  }
+</style>
