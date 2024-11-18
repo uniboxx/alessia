@@ -1,10 +1,5 @@
 ---
 import Layout from '../layouts/Layout.astro';
-const colorNumbers = Array.from({ length: 200 }, () =>
-  Math.floor(Math.random() * 360)
-);
-const colorNumber = Math.floor(Math.random() * 360);
-console.log(colorNumbers);
 ---
 
 <Layout title="altrapagina">
@@ -36,9 +31,7 @@ console.log(colorNumbers);
 </style>
 
 <script>
-  import { isLeftHandSideExpression } from 'typescript';
-
-  const h1El = document.getElementById('myH1');
+  const h1El = document.getElementById('myH1')!;
   let color: number = Math.floor(Math.random() * 360);
 
   setInterval(() => {
