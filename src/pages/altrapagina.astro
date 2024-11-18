@@ -37,7 +37,7 @@ import Layout from '../layouts/Layout.astro';
   setInterval(() => {
     color += 1;
     if (color === 360) color = 0;
-    h1El.style.color = `hsl(${color},${Math.floor(Math.random() * 100)}%,${Math.floor(Math.random() * 100)}%)`;
+    h1El.style.color = `hsl(${color},${Math.floor(Math.random() * 10 + 90)}%,${Math.floor(Math.random() * (50 - 40) + 40)}%)`;
     console.log(color);
   }, 1000);
 </script>
